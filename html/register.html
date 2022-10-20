@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <style>
+        .background{ 
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top:0px;
+            background: url(img/background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+        }
+        .box{
+            background-color: antiquewhite;
+            margin:auto;
+            margin-top: 70px;
+            width: 800px;
+            height: 600px;
+            position:relative;
+            border-radius: 20px;
+        }
+        .register{
+            width: 500px;
+            height: 600px;
+            background-color:bisque;
+            float: left;
+            border-radius: 20px;
+        }
+        .login{
+            width: 300px;
+            height: 600px;
+            background-color: #9297be;
+            float: left;
+            border-radius: 20px;
+        }
+        input{
+            width: 270px;
+            border-top-style:hidden;
+            border-right-style:hidden;
+            border-left-style:hidden;
+            background:none;
+            margin: 0;
+            text-align: center;
+        }
+        p{
+            color: gray;
+        }
+        .sex{
+            margin-top: 15px;
+            width: 20px;
+        }
+        #file{
+            margin-top: 10px;
+            color: #616161;
+        }
+        button{
+            margin: 5px;
+            width: 250px;
+            height: 33px;
+            border-radius: 20px;
+            border: 0px;
+            background-color: #c0ca33;
+            color: #FFF;
+            font-size: 16px;
+        }
+        .wh{
+            color: #FFF;
+        }
+        #dl{
+            width: 100px;
+            height: 40px;
+            background:none;
+            border: 1px solid #FFF;
+            border-radius: 20px;
+        }
+        span{
+            color: red;
+            font-size: 13px;
+        }
+        .login_btn{
+            background-color: rgba(255, 255, 255, 0.582);
+            border: 1px solid rgb(35, 66, 92);
+            padding: 10px;
+            width: 240px;
+            height: 60px;
+            border-radius: 30px;
+            font-size: 20px;
+            color: rgb(100, 183, 255);
+            font-weight: 100; 
+            margin-top: 15px;
+        }
+        .login_btn:hover{
+            box-shadow: 2px 2px 15px 2px rgb(190, 225, 255);
+            background-color: transparent;
+            color: blue;
+            animation: login_mation 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="box">
+        <div class="register">
+            <br>
+            <h1>用户注册</h1>
+            <p>
+                邮箱<span id="verify"></span>
+                <br>
+                <input type="text" id="em" onchange="myem()" placeholder="请输入您的邮箱">
+            </p>
+            <p>
+                用户名<span id="verify"></span> <br> &nbsp; &nbsp; 用户名要求6到10位纯数字
+                <br>
+                <input type="text" id="un" onchange="myun()" placeholder="请输入将的用户名">
+            </p>
+            <p>
+                性别<br>
+                男<input type="radio" name="sex" class="sex">
+                女<input type="radio" name="sex" class="sex">
+            </p>
+            <p>
+                密码<span id="verify"></span><br> &nbsp; &nbsp; 密码要求八位以上的字母数字
+                <input type="password" id="pwd" onchange= "mypwd()" placeholder="请输入密码">
+                <span id="afterpwd"></span><br>
+            </p>
+            <p>
+                确认密码<span id="verify"></span> <br> &nbsp; &nbsp; 两次密码要求一致
+                <br>
+                <input type="password" id="ag" onchange="myag()" placeholder="请再次输入密码">
+            </p>
+           <a href="temp.html"> <button class="login_btn" id="zhu">注册</button></a>
+        </div>
+
+        <div class="login">
+            <br><br><br>
+            <h2 class="wh">已有账号？</h2>
+            <p class="wh">有账号就登录吧，好久不见了！</p>
+            <br><br><br><br><br><br><br><br><br><br><br>
+            <a href="login.html"><button class="login_btn">登录</button></a>
+        </div>
+    </div>
+    
+    <script>
+        window.onload=function(){
+            var btnSubEle = document.getElementById("zhu");
+            btnSubEle.onclick =function(){
+                // 邮箱验证
+                var em = document.getElementById("em").value;
+                var regexp = /^([0-9])+\@([A-Z a-z])+\.([A-Z a-z]{2,4})$/;
+                if(regexp.test(em)==false){
+                    alert("邮箱格式错误，请重新输入！");
+                    return false;
+                }
+
+                // 用户名验证
+                var un = document.getElementById("un").value;
+                var reg = /^([0-9]{6,10})$/;
+                if(reg.test(un)==false){
+                    alert("用户名格式错误，请重新输入！");
+                    return false;
+                }
+
+                 // 密次验证
+                var pwd = document.getElementById("pwd").value;
+                var reg = /^(?=\S*[a-z])(?=\S*\d)\S{8,}$/;
+                if(reg.test(pwd)==false){
+                    alert("密码格式错误，请重新输入！");
+                    return false;
+                }
+
+                // 密码二次验证
+                var ag = document.getElementById("ag").value;
+                var pwd = document.getElementById("pwd").value;
+                if(ag!=pwd){
+                    alert("两次密码不一样，请重新输入！");
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

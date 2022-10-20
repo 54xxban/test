@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <style>
+        .background{ 
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top:0px;
+            background: url(img/background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+        }
+        .box{
+            position:relative;
+        }
+        .main{
+            width: 700px;
+            height: 600px;
+            background-color: antiquewhite;
+            border-radius: 20px;
+            margin: auto;
+        }
+  
+        a:link{
+            color: white;
+        }
+        a:hover{
+            color: red;
+            }
+        a{
+            text-decoration: none;
+        }
+        .nav{
+	        width: 100%;
+            background-color: #53a3b9;
+            overflow: hidden;
+        }
+
+        .nav ul{
+            width: 800px;
+            overflow: hidden;
+            list-style-type: none;
+            margin: 5px 10px 5px 0;
+        }
+        .nav ul li{
+            width: 120px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+            color: #FFF;
+            float: left;
+        }
+        .nav ul li:hover{
+            background-color: #4996a5;
+        }
+        .fr{
+            float: right;
+        }
+        h2{
+            text-align: center;
+        }
+        .box1{
+            width: 100px;
+            height: 190px;
+            float: left;
+            background-color: blanchedalmond;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 10%;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .box2{
+            width: 500px;
+            height: 300px;
+            /* background-color: black; */
+            text-align: left;
+            margin-top: -37%;
+            margin-left: 38%;
+        }
+        .box3{
+            width: 550px;
+            height: 230px;
+            margin-top: -1%;
+            margin-left: 32%;
+            position:relative;
+        }
+        img{
+            height: 220px;
+            width: 550px;
+        }
+        .list {
+            width: 500px;
+            height: 300px;
+            position: relative;
+            padding-left: 0px;
+        }
+        .item {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            position: absolute;
+            opacity: 0;
+            transition: all .8s;
+        }
+        .item.active {
+            z-index: 10;
+            opacity: 1;
+        }
+        .btn {
+            width: 30px;
+            height: 30px;
+            z-index: 100;
+            top: 100px;
+            position: absolute;
+            border-radius: 50px;
+            background-color: #99a5b3;
+        }
+        #leftBtn {
+            left: 0px;
+        }
+        #rightBtn {
+            right: 0px;
+        }
+        .pointList {
+            list-style: none;
+            padding-left: 0px;
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            z-index: 200;
+        }
+        .point {
+            width: 10px;
+            height: 10px;
+            background-color: antiquewhite;
+            border-radius: 100%;
+            float: left;
+            margin-right: 8px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: slategray;
+            cursor: pointer;  
+        }
+        .point.active{
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="box">
+        <div class="nav">
+            <ul class="fr">
+                <a href="main.html" ><li>网站首页</a>
+                <a href="home.html"><li>我的家乡</a>
+                <a href="school.html"><li>我的学校</a>
+                <a href="hobby.html"><li>我的偶像</a>
+                <a href="homework.html"><li>我的作业</a>
+                <a href="photo.html"><li>我的相簿</a>
+            </ul>
+        </div>
+        <div class="main">
+            <h2>我的家乡：<a href="https://baike.baidu.com/item/%E7%84%A6%E4%BD%9C/135316">焦作</a></h2>
+            <ul>
+                <var class="box1">
+                    <li><a href="home.html">焦作简介</a></li><br><br>
+                    <li><a href="foot.html">焦作美食</a></li><br><br>
+                    <li> <a href="scenery.html">焦作景点</a></li><br><br>
+                </var>
+            </ul>
+        </div>
+        <div class="box2">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    焦作，古称山阳、怀州，河南省辖地级市，是国务院批复确定的中国中原城市群
+        和豫晋交界地区的区域性中心城市。截至2018年，全市下辖4个区、4个县、代管2个县
+        级市，总面积4071平方公。根据第七次人口普查数据，截至2020年11月1日零时，焦作
+        市常住人口为3521078人。<br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    焦作地处中国华中地区、河南西北部、北依太行山，与山西晋城接壤，南临黄河与
+        郑州、洛阳隔河相望，东临新乡，西临济源，是全国著名的“百年煤城”和老工业基地,国
+        家知识产权试点城市和国家新型工业化示范基地。<br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    2020年，焦作市GDP总量完成2124亿元，一般公共预算收入超150亿元河南2019宜居
+        城市排名焦作城市宜居度居全省第二位，郑州都市圈次级核心城市。 2020年10月，被评
+        为全国双拥模范城（县）。2020年11月，入选国家卫生城市。2020年11月20日，焦作市
+        荣获第六届“全国文明城市”称号
+        </div>
+        <div class="box3">
+            <ul class="list"> 
+                <li class="item active"><img src="img/home1.jpg" alt=""></li>
+                <li class="item"><img src="img/home2.jpg" alt=""></li>
+                <li class="item"><img src="img/home3.jpg" alt=""></li>
+            </ul>
+            <ul class="pointList">
+                <li class="point active" data-index = 0></li>
+                <li class="point" data-index = 1></li>
+                <li class="point" data-index = 2></li>
+            </ul>
+                <button class="btn" id="leftBtn"> < </button> 
+                <button class="btn" id="rightBtn"> > </button>
+        </div>
+    </div>
+
+    <script>
+        var items = document.querySelectorAll(".item");//图片
+        var points = document.querySelectorAll(".point")//点
+        var left = document.getElementById("leftBtn");
+        var right = document.getElementById("rightBtn");
+        var all = document.querySelector(".wrap")
+        var index = 0;
+        var time = 0;//定时器跳转参数初始化
+        
+        //清除active方法
+        var clearActive = function () {
+            for (i = 0; i < items.length; i++) {
+                items[i].className = 'item';
+            }
+            for (j = 0; j < points.length; j++) {
+                points[j].className = 'point';
+            }
+        }
+ 
+        //改变active方法
+        var goIndex = function () {
+            clearActive();
+            items[index].className = 'item active';
+            points[index].className = 'point active'
+        }
+
+         //左按钮事件
+         var goLeft = function () {
+            if (index == 0) {
+                index = 2;
+            } else {
+                index--;
+            }
+            goIndex();
+        }
+ 
+        //右按钮事件
+        var goRight = function () {
+            if (index < 2) {
+                index++;
+            } else {
+                index = 0;
+            }
+            goIndex();
+        }
+        //绑定点击事件监听
+        left.addEventListener('click', function () {
+            goLeft();
+            time = 0;//计时器跳转清零
+        })
+ 
+        right.addEventListener('click', function () {
+            goRight();
+            time = 0;//计时器跳转清零
+        })
+ 
+        for(i = 0;i < points.length;i++){
+            points[i].addEventListener('click',function(){
+                var pointIndex = this.getAttribute('data-index')
+                index = pointIndex;
+                goIndex();
+                time = 0;//计时器跳转清零
+            })
+        }
+
+        //计时器
+        var timer;
+        function play(){
+         timer = setInterval(() => {
+            time ++;
+            if(time == 20 ){
+                goRight();
+                time = 0;
+            }    
+        },100)
+    }
+        play();
+        //移入清除计时器
+        all.onmousemove = function(){
+            clearInterval(timer)
+        }
+       //移出启动计时器
+        all.onmouseleave = function(){
+            play();
+        }
+    </script>
+</body>
+</html>

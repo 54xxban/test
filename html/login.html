@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆页面</title>
+    <style>
+        .background{ 
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top:0px;
+            background: url(img/background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+        }
+        .login{
+            text-align: center;
+            margin: 0 auto;
+            width: 600px;
+            height: 520px;
+            background-color:antiquewhite;
+            border-radius: 25px;
+            box-shadow: 5px 2px 35px -7px #ff9a9e;
+            position:relative;
+        }
+        .login h2{
+            margin-top: 40px;
+            color:black;
+            font-weight: 100;
+        }
+        .login_box{
+            padding: 20px;
+        }
+        .login_box span{
+            font-size: 18px;
+            font-weight: 100;
+        }
+        .login_box input{
+            background-color: transparent;
+            width: 320px;
+            padding: 2px;
+            text-indent: 2px;
+            font-size: 20px;
+            height: 45px;
+            margin: 30px 30px 30px 5px;
+            outline: none;
+            border: 0;
+        }
+        input::placeholder{
+            color: black;
+            font-weight: 100;
+            font-size: 18px;
+            font-style: italic;
+        }
+        .login_btn{
+            background-color: rgba(255, 255, 255, 0.582);
+            border: 1px solid rgb(190, 225, 255);
+            padding: 10px;
+            width: 240px;
+            height: 60px;
+            border-radius: 30px;
+            font-size: 30px;
+            color: rgb(100, 183, 255);
+            font-weight: 100;       
+            margin-top: 15px;
+        }
+        .login_btn:hover{
+            box-shadow: 2px 2px 15px 2px rgb(190, 225, 255);
+            background-color: transparent;
+            color: blue;
+            animation: login_mation 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background"></div>
+    <div class="login">
+        <h2>登陆</h2>
+        <div class="login_box">
+        <span>用户名：</span>
+        <input type="text" name="username" id="username" placeholder="请输入将的用户名">
+        <br>
+        <span>密码：</span>
+        <input type="password" name="password" id="password" placeholder="请输入密码">
+        <div class="btn">
+        <a href="main.html"><button class="login_btn" id="login" type="submit">登 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button></a>
+        </div>           
+    </div>
+
+    <script>
+        window.onload=function(){
+    	var btnSubEle = document.getElementById("login");
+    	btnSubEle.onclick =function(){
+    		var usernameValue = document.getElementById("username").value;
+                if(usernameValue == "" || usernameValue == null ){
+                    alert("用户名不能为空，请重新输入！");
+                    return false;
+                }
+                var passwordValue = document.getElementById("password").value;
+                if(passwordValue =="" || passwordValue == null ){
+                    alert("密码不能为空，请重新输入！");
+                    return false;
+                }	
+    	    }
+        }
+    </script>
+
+</html>
+</body>

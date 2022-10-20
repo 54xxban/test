@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width:200px;
+            height:200px;
+            background-color: blanchedalmond;
+            position: absolute;
+            float: right;
+        }  
+        #box2{
+            width:200px;
+            height:200px;
+            background-color: blanchedalmond;
+            float: right;
+        } 
+        #box3{
+            width:200px;
+            height:200px;
+            background-color: blanchedalmond;
+            float: right;
+            /* margin: 500px; */
+            margin-right: -200px;
+            margin-top: 540px;
+        } 
+    </style>
+    <style>a{TEXT-DECORATION:none}</style> 
+</head>
+
+<body>
+    <div class = all>
+        <div id="box1">
+            <a href="#" close1.onclick = function ();">关闭广告✖</a>
+    </div>
+
+    <div class="all">
+        <div id="box2">
+            <a href="#" close2.onclick = function ();">关闭广告✖</a> 
+        </div>
+    </div>
+    <div class="all">
+        <div id="box3">
+            <a href="#" close3.onclick = function ();">关闭广告✖</a> 
+        </div>
+    </div>
+
+    <script>
+            var close1 = document.getElementById("box1")
+                close1.onclick = function (){
+                box1.style.display="none";
+            }
+            var close2 = document.getElementById("box2")
+                close2.onclick = function (){
+                box2.style.display="none";
+            }
+            var close3 = document.getElementById("box3")
+                close3.onclick = function (){
+                box3.style.display="none";
+            }
+    </script>
+</body>
+</html>

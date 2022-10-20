@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{text-align: center;}
+        .box{
+            width: 550px;
+            height: 380px;
+            margin: auto;
+            background-color: blueviolet;
+            margin: auto;
+        }
+        .box td{
+            border-right: 1px solid black;
+            color: white;
+        }
+        .bx1{
+            border-radius:10px 10px 10px 10px;
+            background-color: red;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            margin: auto;
+        }
+        div{
+            border-radius:10px 10px 10px 10px;
+            background-color: green;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            margin: auto;
+        }
+         img {
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>天气预报</h2>
+    <div class="box">
+        <table>
+            <tr>
+                <td colspan="5" style="text-align:left">08月08日 周三 农历六月廿七</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><img src="ic_cloudy.png" ></td>
+                <td>周四</td>
+                <td>周五</td>
+                <td>周六</td>
+                <td>周日</td>
+            </tr>
+            <tr>
+                <td>08月09日</td>
+                <td>08月09日</td>
+                <td>08月09日</td>
+                <td>08月09日</td>
+            </tr>
+            <tr>
+                <td>26℃</td>
+                <td><img src="ic_rainstorm.png"></td>
+                <td><img src="ic_thunderstorm.png" alt=""></td>
+                <td><img src="ic_light_rain.png" alt=""></td>
+                <td><img src="ic_sunny.png" alt=""></td>
+            </tr>
+            <tr>
+                <td>19~28℃</td>
+                <td>19~28℃</td>
+                <td>19~28℃</td>
+                <td>19~28℃</td>
+                <td>19~28℃</td>
+            </tr>
+            <tr>
+                <td>阴天</td>
+                <td>中雨</td>
+                <td>雷阵雨</td>
+                <td>小雨</td>
+                <td>多云转晴</td>
+            </tr>
+            <tr>
+                <td>无持续风向微风</td>
+                <td>北风3~4级</td>
+                <td>北风3~4级</td>
+                <td>北风3~4级</td>
+                <td>微风</td>
+            </tr>
+            <tr>
+                <td><div class="bx1">良</div></td>
+                <td><div>良</div></td>
+                <td><div>良</div></td>
+                <td><div>良</div></td>
+                <td><div>优</div></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

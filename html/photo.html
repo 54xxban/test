@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+        
+        <style>
+        .background{ 
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top:0px;
+            background: url(img/background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+        }
+        .box{
+            position:relative;
+            margin: auto;
+        }
+        .main{
+            background-color: aquamarine;
+            width: 1000px;
+            height: 600px;
+            margin: auto;
+        }
+        a:link{
+            color: white;
+        }
+        a:hover{
+            color: red;
+            }
+        a{
+            text-decoration: none;
+        }
+        .nav{
+	        width: 100%;
+	        background-color: #4996a5;
+	        overflow: hidden;
+        }
+        .nav ul{
+            width: 800px;
+            overflow: hidden;
+            list-style-type: none;
+            margin: 5px 10px 5px 0;
+        }
+        .nav ul li{
+            width: 120px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+            color: white;
+            float: left;
+        }
+        .nav ul li:hover{
+            background-color: #4996a5;
+        }
+        .fr{
+            float: right;
+        }
+        .wrap {
+            width: 900px;
+            height: 580px;
+            position:relative;
+        }
+        .list {
+            width: 900px;
+            height: 580px;
+            position: relative;
+            padding-left: 0px;
+        }
+ 
+        .item {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            position: absolute;
+            opacity: 0;
+            transition: all .8s;
+        }
+        .item.active {
+            z-index: 10;
+            opacity: 1;
+        }
+        .btn {
+            width: 30px;
+            height: 30px;
+            z-index: 100;
+            top: 250px;
+            position: absolute;
+            border-radius: 50px;
+            background-color: #99a5b3;
+        }
+        #leftBtn {
+            left: 0px;
+        }
+        #rightBtn {
+            right: 0px;
+        }
+        .pointList {
+            list-style: none;
+            padding-left: 0px;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 200;
+        }
+        .point {
+            width: 10px;
+            height: 10px;
+            background-color: antiquewhite;
+            border-radius: 100%;
+            float: left;
+            margin-right: 8px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: slategray;
+            cursor: pointer;  
+        }
+        .point.active{
+            background-color: cadetblue;
+        }
+        img{
+            width: 900px;
+            height: 580px;
+        }
+
+        .el-carousel__item h3 {
+            color: #475669;
+            font-size: 18px;
+            opacity: 0.75;
+            line-height: 300px;
+            margin: 0;
+        }
+        
+        .el-carousel__item:nth-child(2n) {
+            background-image: url(img/photo1.jpg);
+        }
+        
+        .el-carousel__item:nth-child(2n+1) {
+            background-image: url(img/photo2.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="box">
+            <div class="nav">
+				<ul class="fr">
+					<a href="main.html" ><li>网站首页</a>
+                    <a href="home.html"><li>我的家乡</a>
+                    <a href="school.html"><li>我的学校</a>
+                    <a href="hobby.html"><li>我的偶像</a>
+                    <a href="homework.html"><li>我的作业</a>
+                    <a href="photo.html"><li>我的相簿</a>
+				</ul>
+			</div>
+    </div>
+    <div class="main">
+        <div class="wrap">
+            <ul class="list">
+                <li class="item active"><img src="img/photo1.png" alt=""></li>
+                <li class="item"><img src="img/photo2.jpg" alt=""></li>
+                <li class="item"><img src="img/photo3.jpg" alt=""></li>
+                <li class="item"><img src="img/photo4.png" alt=""></li>
+                <li class="item"><img src="img/photo5.jpg" alt=""></li>
+                <li class="item"><img src="img/photo6.jpg" alt=""></li>
+                <li class="item"><img src="img/photo7.jpg" alt=""></li>
+            </ul>
+                <ul class="pointList">
+                <li class="point active" data-index = 0></li>
+                <li class="point" data-index = 1></li>
+                <li class="point" data-index = 2></li>
+                <li class="point" data-index = 3></li>
+                <li class="point" data-index = 4></li>
+                <li class="point" data-index = 5></li>
+                <li class="point" data-index = 6></li>
+            </ul>
+                <button class="btn" id="leftBtn"> < </button> 
+                <button class="btn" id="rightBtn"> > </button>
+        </div>
+    </div>
+
+    <script>
+        var items = document.querySelectorAll(".item");//图片
+        var points = document.querySelectorAll(".point")//点
+        var left = document.getElementById("leftBtn");
+        var right = document.getElementById("rightBtn");
+        var all = document.querySelector(".wrap")
+        var index = 0;
+        var time = 0;//定时器跳转参数初始化
+        
+        //清除active方法
+        var clearActive = function () {
+            for (i = 0; i < items.length; i++) {
+                items[i].className = 'item';
+            }
+            for (j = 0; j < points.length; j++) {
+                points[j].className = 'point';
+            }
+        }
+ 
+        //改变active方法
+        var goIndex = function () {
+            clearActive();
+            items[index].className = 'item active';
+            points[index].className = 'point active'
+        }
+
+        //左按钮事件
+        var goLeft = function () {
+            if (index == 0) {
+                index = 6;
+            } else {
+                index--;
+            }
+            goIndex();
+        }
+ 
+        //右按钮事件
+        var goRight = function () {
+            if (index < 6) {
+                index++;
+            } else {
+                index = 0;
+            }
+            goIndex();
+        }
+        
+        //绑定点击事件监听
+        left.addEventListener('click', function () {
+            goLeft();
+            time = 0;//计时器跳转清零
+        })
+ 
+        right.addEventListener('click', function () {
+            goRight();
+            time = 0;//计时器跳转清零
+        })
+ 
+        for(i = 0;i < points.length;i++){
+            points[i].addEventListener('click',function(){
+                var pointIndex = this.getAttribute('data-index')
+                index = pointIndex;
+                goIndex();
+                time = 0;//计时器跳转清零
+            })
+        }
+
+        //计时器
+        var timer;
+        function play(){
+         timer = setInterval(() => {
+            time ++;
+            if(time == 20 ){
+                goRight();
+                time = 0;
+            }    
+        },100)
+    }
+        play();
+        //移入清除计时器
+        all.onmousemove = function(){
+            clearInterval(timer)
+        }
+       //移出启动计时器
+        all.onmouseleave = function(){
+            play();
+        }
+
+
+    </script>
+</body>
+</html>
